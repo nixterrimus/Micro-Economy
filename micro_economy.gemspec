@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "micro_economy"
   s.version     = MicroEconomy::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Nicholas Rowe"]
+  s.email       = ["nixterrimus@dcxn.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{The Numbers On the World Around You.}
+  s.description = %q{Micro Economy Lets You learn more about your economy at a hyper local level}
 
   s.rubyforge_project = "micro_economy"
 
