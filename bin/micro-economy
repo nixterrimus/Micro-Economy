@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'terminal-table/import'
+
+dir = File.expand_path(File.dirname(__FILE__))
+require dir + '/../lib/micro_economy'
+
+craigsdata = MicroEconomy::CraigsData.new(:location => 'sfbay')
+apartments = craigsdata.apartment_data
+
+today = Time.now.strftime("%b %d, %Y")
+
+puts "Average Apartment Data for the SF Bay Area on #{today}"
+apartment_table = table do |t|
+  t.headings = 'Apartment Size', 'Average Price', 'Number of Listings'
+  apartments.keys.sort!.each do |apartment_size|
+    apartment_price = "%.2f" % apartments[apartment_size]['average']
+    t << ["#{apartment_size}", "$#{apartment_price}", "#{apartments[apartment_size]['data_point_count']} listings"]
+  end
+end
+
+puts apartment_table
